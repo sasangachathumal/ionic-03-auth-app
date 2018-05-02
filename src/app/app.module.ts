@@ -3,11 +3,13 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { SignInPageModule } from '../pages/sign-in/sign-in.module';
 import { SignUpPageModule } from '../pages/sign-up/sign-up.module';
 import { WelcomePageModule } from '../pages/welcome/welcome.module';
+import { AuthDataProvider } from '../providers/auth-data/auth-data';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { WelcomePageModule } from '../pages/welcome/welcome.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     WelcomePageModule,
     SignInPageModule,
     SignUpPageModule
@@ -27,7 +30,8 @@ import { WelcomePageModule } from '../pages/welcome/welcome.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthDataProvider
   ]
 })
 export class AppModule {}

@@ -18,27 +18,27 @@
 
     <ion-item no-padding>
       <ion-label floating>FirstName</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="user.firstName"></ion-input>
     </ion-item>
 
     <ion-item no-padding>
       <ion-label floating>LastName</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="user.lastName"></ion-input>
     </ion-item>
 
     <ion-item no-padding>
       <ion-label floating>Email</ion-label>
-      <ion-input type="email" value=""></ion-input>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
     </ion-item>
 
     <ion-item no-padding>
       <ion-label floating>Date Of Birth</ion-label>
-      <ion-input type="text" pattern="/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/" value=""></ion-input>
+      <ion-input type="text" pattern="/(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/" [(ngModel)]="user.dob"></ion-input>
     </ion-item>
 
     <ion-item no-padding>
       <ion-label floating>Address</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-textarea [(ngModel)]="user.address"></ion-textarea>
     </ion-item>
 
     <ion-item no-padding no-lines>
@@ -53,15 +53,15 @@
 
     <ion-item no-padding>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
 
     <ion-item no-padding>
       <ion-label floating>Confirm Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="user.confirmPassword"></ion-input>
     </ion-item>
 
-    <button margin-top ion-button block round color="primary">Sign Up</button>
+    <button margin-top ion-button block round color="primary" (click)="signUp()">Sign Up</button>
 
   </ion-list>
 </ion-content>
